@@ -20,7 +20,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
   return (
     <nav>
-      <div className={`${navbarBackground} ${flexBetween} fixed top-0 z-50 w-full py-4`}>
+      <div className={`${navbarBackground} ${flexBetween} fixed top-0 z-40 w-full py-4`}>
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             <img alt="Logo" src={Logo} className="w-[15%]" />
@@ -77,7 +77,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             </button>
           </div>
           {/* menu item */}
-          <div className="ml-[33%] flex flex-col gap-10 text-[18px] font-semibold">
+          <div className="ml-[33%] z-50 flex flex-col gap-10 text-[18px] font-semibold">
             <Link
               page={SelectedPage.Home}
               selectedPage={selectedPage}
