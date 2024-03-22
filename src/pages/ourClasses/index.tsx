@@ -1,3 +1,4 @@
+
 import { SelectedPage } from "../../shared/types";
 import image1 from "../../../public/images/image1.png"
 import image2 from "../../../public/images/image2.png"
@@ -8,6 +9,7 @@ import image6 from "../../../public/images/image6.png"
 import HText from "../../shared/HText";
 import { motion } from "framer-motion";
 import Class from "./class";
+import './class.css'
 
 
 const classes = [
@@ -50,7 +52,6 @@ type Props = {
 }
 
 const OurClasses = ({ setSelectedPage }: Props) => {
-
   return (
     <section id="OurClasses" className="w-full bg-primary-100 py-20 md:py-40">
       <motion.div
@@ -79,9 +80,10 @@ const OurClasses = ({ setSelectedPage }: Props) => {
             </p>
           </div>
         </motion.div>
-        <div className="mt-10 h-[335px] w-full overflow-x-auto overflow-y-hidden">
-          <ul className="w-[2800px] whitespace-nowrap">
-            {classes.map((item,index) => (
+        <div className="mt-10 h-[335px] whitespace-nowrap overflow-hidden ">
+          <div className="scroll">
+          <ul>
+            {classes.map((item, index) => (
               <Class
                 key={`${item.name}-${index}`}
                 name={item.name}
@@ -90,6 +92,7 @@ const OurClasses = ({ setSelectedPage }: Props) => {
               />
             ))}
           </ul>
+          </div>
         </div>
       </motion.div>
     </section>

@@ -5,6 +5,7 @@ import Link from "./Link";
 import { SelectedPage } from "../../shared/types";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import ActionButton from "../../shared/ActionButton";
+import "../../css/index.css"
 
 type Props = {
   isTopOfPage: boolean;
@@ -49,7 +50,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                 </div>
                 <div className={`${flexBetween} gap-8 text-lg`}>
                   <button className="hover:text-primary-500 transition duration-300">Sign In</button>
-                  <ActionButton  setSelectedPage={setSelectedPage}>Become a Member</ActionButton>
+                  <ActionButton setSelectedPage={setSelectedPage}>Become a Member</ActionButton>
 
                 </div>
               </div>
@@ -69,10 +70,10 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
       {/* mobile menu modal */}
       {!isAboveMediumScreen && isMenuToggled && (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
+        <div className={`fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl ${isMenuToggled ? "slideIn" : "slideOut"}`}>
           {/* close icon */}
           <div className="flex justify-end p-12">
-            <button onClick={() => setIsMenuToggled(!isMenuToggled)} >
+            <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <XMarkIcon className="h-6 w-6 text-gray-400" />
             </button>
           </div>

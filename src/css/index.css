@@ -1,0 +1,30 @@
+.slideIn {
+    animation: slideIn 0.5s forwards;
+}
+
+/* For sliding out */
+.slideOut {
+    animation: slideOut 0.5s ease-out;
+}
+
+/* Keyframes for sliding in */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for sliding out */
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
