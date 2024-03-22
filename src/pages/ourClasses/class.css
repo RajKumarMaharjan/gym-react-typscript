@@ -8,9 +8,5 @@
 }
 
 .scroll {
- animation: scroll 25s linear infinite;
-}
-
-.scroll:hover {
-  animation-play-state: paused;
+ animation: scroll 30s linear infinite;
 }

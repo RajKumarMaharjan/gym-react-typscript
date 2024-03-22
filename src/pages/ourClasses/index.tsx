@@ -1,4 +1,4 @@
-
+import { useRef } from "react";
 import { SelectedPage } from "../../shared/types";
 import image1 from "../../../public/images/image1.png"
 import image2 from "../../../public/images/image2.png"
@@ -52,6 +52,22 @@ type Props = {
 }
 
 const OurClasses = ({ setSelectedPage }: Props) => {
+const hoverRef = useRef(null);
+
+const handleMouseOver = () => {
+  const scrollElements = hoverRef.current?.querySelectorAll(".scroll");
+  scrollElements?.forEach((element) => {
+    element.style.animationPlayState = "paused"
+  })
+};
+
+const handleMouseOut = () => {
+  const scrollElements = hoverRef.current?.querySelectorAll(".scroll");
+  scrollElements?.forEach((element) => {
+    element.style.animationPlayState = "running"
+}
+)};
+
   return (
     <section id="OurClasses" className="w-full bg-primary-100 py-20 md:py-40">
       <motion.div
@@ -80,9 +96,12 @@ const OurClasses = ({ setSelectedPage }: Props) => {
             </p>
           </div>
         </motion.div>
-        <div className="mt-10 h-[335px] whitespace-nowrap overflow-hidden ">
-          <div className="scroll">
-          <ul>
+        <div ref={hoverRef}
+         className="mt-10 h-[335px] whitespace-nowrap flex overflow-hidden" 
+         onMouseOver={handleMouseOver}
+         onMouseOut={handleMouseOut}
+        >
+          <ul className="scroll">
             {classes.map((item, index) => (
               <Class
                 key={`${item.name}-${index}`}
@@ -92,7 +111,16 @@ const OurClasses = ({ setSelectedPage }: Props) => {
               />
             ))}
           </ul>
-          </div>
+          <ul className="scroll" aria-hidden="true">
+            {classes.map((item, index) => (
+              <Class
+                key={`${item.name}-${index}`}
+                name={item.name}
+                description={item.description}
+                image={item.image}
+              />
+            ))}
+          </ul>
         </div>
       </motion.div>
     </section>
