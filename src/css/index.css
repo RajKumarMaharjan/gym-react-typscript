@@ -1,10 +1,10 @@
 .slideIn {
-    animation: slideIn 0.5s forwards;
+    animation: slideIn 0.5s ease-in-out;
 }
 
 /* For sliding out */
 .slideOut {
-    animation: slideOut 0.5s ease-out;
+    animation: slideOut 0.5s ease-in-out;
 }
 
 /* Keyframes for sliding in */

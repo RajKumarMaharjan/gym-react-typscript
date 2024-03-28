@@ -61,24 +61,22 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                 </button>
               </div>
             )
-
             }
-
           </div>
         </div>
       </div>
 
       {/* mobile menu modal */}
       {!isAboveMediumScreen && isMenuToggled && (
-        <div className={`fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl ${isMenuToggled ? "slideIn" : "slideOut"}`}>
+        <div className={`fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl ${isMenuToggled ? "slideIn" : ""}`}>
           {/* close icon */}
-          <div className="flex justify-end p-12">
+          <div className="flex justify-end pr-4 py-4">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <XMarkIcon className="h-6 w-6 text-gray-400" />
             </button>
           </div>
           {/* menu item */}
-          <div className="ml-[33%] z-50 flex flex-col gap-10 text-[18px] font-semibold">
+          <div className="z-50 text-start mx-[15%] space-y-3 text-[18px] font-semibold">
             <Link
               page={SelectedPage.Home}
               selectedPage={selectedPage}
